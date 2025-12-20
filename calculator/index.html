@@ -132,6 +132,12 @@ body{
 const display = document.getElementById("display");
 
 function appendValue(value){
+    // Prevent multiple consecutive operators
+    const lastChar = display.value.slice(-1);
+    const operators = ['+', '-', '*', '/'];
+    if(operators.includes(value) && operators.includes(lastChar)){
+        return;
+    }
     display.value += value;
 }
 
@@ -141,9 +147,9 @@ function clearDisplay(){
 
 function calculateResult(){
     try{
-        // Using eval safely by replacing unsafe characters
         let expression = display.value.replace(/[^-()\d/*+.]/g, '');
-        display.value = eval(expression);
+        // Evaluate only if expression is valid
+        display.value = expression ? eval(expression) : "";
     } catch {
         display.value = "Error";
     }

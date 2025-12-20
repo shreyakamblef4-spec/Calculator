@@ -1,4 +1,5 @@
 # Calculator
+#A responsive Calculator Web Application designed to perform basic arithmetic operations with accuracy and ease. Developed using HTML, CSS, and JavaScript, this project emphasizes clean UI, interactive functionality, and efficient logic handling. Created as part of my Web Development Internship at CODSOFT, it helped strengthen my understanding of JavaScript fundamentals, DOM manipulation, and responsive web design principles.
 
 🧮 Calculator Web Application
 📌 Project Overview

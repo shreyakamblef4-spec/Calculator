@@ -141,8 +141,10 @@ function clearDisplay(){
 
 function calculateResult(){
     try{
-        display.value = Function('"use strict"; return (' + display.value + ')')();
-    }catch{
+        // Using eval safely by replacing unsafe characters
+        let expression = display.value.replace(/[^-()\d/*+.]/g, '');
+        display.value = eval(expression);
+    } catch {
         display.value = "Error";
     }
 }
